@@ -47,7 +47,7 @@
     "lint": "eslint --format node_modules/eslint-friendly-formatter .",
     "lint:fix": "prettier-eslint --write $(pwd)'/**/*.js'",
     "lint:staged": "lint-staged",
-    "clean": "rm -rf build/ && rm -rf dist",
+    "clean": "rimraf build/ && rimraf dist",
     "benchmark": "node --expose-gc benchmark",
     "benchmark:debug": "node --expose-gc --inspect-brk --trace-deopt benchmark",
     "build": "grunt build",
