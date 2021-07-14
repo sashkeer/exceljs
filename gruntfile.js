@@ -27,14 +27,20 @@ module.exports = function(grunt) {
     browserify: {
       options: {
         transform: [
-          ['babelify', {
-            // enable babel transpile for node_modules
-            global: true,
-            presets: ['@babel/preset-env'],
-            // core-js should not be transpiled
-            // See https://github.com/zloirock/core-js/issues/514
-            ignore: [/node_modules[\\/]core-js/],
-          }],
+          [
+            'babelify',
+            {
+              // enable babel transpile for node_modules
+              global: true,
+              presets: ['@babel/preset-env'],
+              targets: {
+                node: '8.9',
+              },
+              // core-js should not be transpiled
+              // See https://github.com/zloirock/core-js/issues/514
+              ignore: [/node_modules[\\/]core-js/],
+            },
+          ],
         ],
         browserifyOptions: {
           // enable source map for browserify
