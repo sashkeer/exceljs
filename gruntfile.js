@@ -11,8 +11,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
     babel: {
       options: {
+        global: true,
         sourceMap: true,
         compact: false,
+        presets: ['@babel/preset-env'],
+        "targets": {
+          "node": "6.10"
+        },
+        // core-js should not be transpiled
+        // See https://github.com/zloirock/core-js/issues/514
+        ignore: [/node_modules[\\/]core-js/],
       },
       dist: {
         files: [
@@ -27,20 +35,17 @@ module.exports = function(grunt) {
     browserify: {
       options: {
         transform: [
-          [
-            'babelify',
-            {
-              // enable babel transpile for node_modules
-              global: true,
-              presets: ['@babel/preset-env'],
-              targets: {
-                node: '8.9',
-              },
-              // core-js should not be transpiled
-              // See https://github.com/zloirock/core-js/issues/514
-              ignore: [/node_modules[\\/]core-js/],
+          ['babelify', {
+            // enable babel transpile for node_modules
+            global: true,
+            presets: ['@babel/preset-env'],
+            "targets": {
+              "node": "6.10"
             },
-          ],
+            // core-js should not be transpiled
+            // See https://github.com/zloirock/core-js/issues/514
+            ignore: [/node_modules[\\/]core-js/],
+          }],
         ],
         browserifyOptions: {
           // enable source map for browserify
