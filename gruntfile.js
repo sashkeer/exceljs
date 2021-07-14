@@ -11,16 +11,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     babel: {
       options: {
-        global: true,
         sourceMap: true,
         compact: false,
         presets: ['@babel/preset-env'],
-        "targets": {
-          "node": "6.10"
+        targets: {
+          node: "6.10"
         },
-        // core-js should not be transpiled
-        // See https://github.com/zloirock/core-js/issues/514
-        ignore: [/node_modules[\\/]core-js/],
       },
       dist: {
         files: [
