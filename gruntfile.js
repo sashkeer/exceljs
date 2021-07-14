@@ -13,10 +13,6 @@ module.exports = function(grunt) {
       options: {
         sourceMap: true,
         compact: false,
-        presets: ['@babel/preset-env'],
-        targets: {
-          node: "6.10"
-        },
       },
       dist: {
         files: [
