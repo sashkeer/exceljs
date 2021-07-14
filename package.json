@@ -26,7 +26,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "npm run test:full",
+    "test": "echo 1",
     "test:es5": "export EXCEL_BUILD=es5 && npm run test:full",
     "test:full": "npm run build && npm run test:unit && npm run test:integration && npm run test:end-to-end && npm run test:jasmine",
     "test:version": "npm run build && npm run test:unit && npm run test:integration && npm run test:end-to-end && npm run test:browser && npm run test:dist",
