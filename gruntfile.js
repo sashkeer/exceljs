@@ -30,13 +30,13 @@ module.exports = function(grunt) {
           ['babelify', {
             // enable babel transpile for node_modules
             global: true,
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', 'es2015'],
             "targets": {
               "node": "6.10"
             },
             // core-js should not be transpiled
             // See https://github.com/zloirock/core-js/issues/514
-            ignore: [/node_modules[\\/]core-js/],
+            // ignore: [/node_modules[\\/]core-js/],
           }],
         ],
         browserifyOptions: {
